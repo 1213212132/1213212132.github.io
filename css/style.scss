@@ -1068,7 +1068,7 @@ body {
 
 .btn ul li {
     margin-right: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: center;
 }
@@ -1076,7 +1076,9 @@ body {
 .btn ul li a {
     display: block;
     padding: 10px 0px;
-    font-size: 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    background: #eee;
     text-align: center;
     width: 220px;
     font-weight: 300;
