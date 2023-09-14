@@ -1586,7 +1586,7 @@ body {
   position: absolute;
   width: 300px;
   height: 500px;
-  left: 50px;
+  left: -100px;
   bottom: 98px;
 }
 
@@ -1606,7 +1606,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  right: -1px;
+  right: -80px;
   bottom: 221px;
 }
 
