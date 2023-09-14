@@ -19,6 +19,8 @@ $(function () {
       Swal.fire('감사합니다.', '스크롤을 내리시면 메인화면으로 이동합니다.', 'success');
     }
   });
+
+
   // #home nav
 
   var nav = $('.nav ul li');
