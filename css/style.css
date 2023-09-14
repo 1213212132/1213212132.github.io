@@ -1,0 +1,2288 @@
+@charset "UTF-8";
+@import url(reset.css);
+@import url(keyframe.css);
+@import url(font.css);
+/* 알림창 */
+.swal2-title {
+  font-size: 26px;
+}
+
+#swal2-content {
+  font-size: 16px;
+}
+
+.text {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  color: #ddd;
+  z-index: 1000;
+}
+
+#wrap {
+  background: #f9f9f9 url(../images/b.png);
+  overflow-x: hidden;
+}
+
+/*############### #welcome ###############  */
+#welcome {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/* https://www.crocus.co.kr/1582 */
+#welcome .wel_text {
+  width: 100%;
+  position: absolute;
+  transform: translateX(-50%) scale(1);
+  mix-blend-mode: overlay;
+}
+
+#welcome .wel_text h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 99px;
+  animation: wel_text_ani 3s ease-in-out both;
+  text-align: center;
+  font-family: "SF_IceLemon";
+  position: absolute;
+  top: -120px;
+  margin-top: -65px;
+  -webkit-text-stroke: 1.5px #111;
+  background: #f9f9f9;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(0deg, #f9f9f9 0%, #fff 10%, transparent 50%);
+  letter-spacing: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+/*애니*/
+:root {
+  --white: #fff;
+  --dark-yellow: #ffcc66;
+  --light-yellow: #ffff99;
+  --light-pink: #ffcccf;
+  --light-blue: #ccfffc;
+  --dark-purple: #4b1a63;
+  --dark-blue: #000099;
+  --black: #000;
+  --star-size-s: 14px;
+  --star-size-m: 20px;
+  --star-size-l: 26px;
+  --pine-shape: polygon(49% 0, 11% 35%, 34% 30%, 6% 65%, 34% 58%, 1% 90%, 41% 82%, 36% 100%, 60% 100%, 56% 82%, 96% 89%, 67% 58%, 93% 63%, 62% 30%, 87% 34%);
+  --cabin-shape: polygon(50% 0%, 100% 30%, 85% 31%, 85% 100%, 15% 100%, 15% 30%, 0 30%);
+  --door-shape: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 20%);
+  --window-firelight: window-flicker 0.5s infinite, window-light-on 14s forwards;
+  --door-firelight: door-flicker 0.5s infinite;
+}
+
+body {
+  animation: darken 14s ease-out forwards;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  animation-name: sunset;
+  animation-duration: 15s;
+  animation-fill-mode: forwards;
+}
+
+.moon {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: transparent;
+  border-radius: 50%;
+  margin-left: 74%;
+  animation-name: rise;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
+  animation-timing-function: ease-out;
+}
+
+.stars {
+  position: absolute;
+  opacity: 0;
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star1 {
+  width: var(--star-size-s);
+  height: var(--star-size-s);
+  margin-left: 8%;
+  margin-top: 12%;
+  animation: twinkle 1s infinite, fade-in 10s 1;
+  -webkit-animation: twinkle 1s infinite, fade-in 10s ease 1s 1;
+}
+
+.star2 {
+  width: var(--star-size-l);
+  height: var(--star-size-l);
+  margin-left: 30%;
+  margin-top: 8%;
+  animation: twinkle 0.9s infinite, fade-in 12s 1;
+  -webkit-animation: twinkle 0.9s infinite, fade-in 12s ease 1s 1;
+}
+
+.star3 {
+  width: var(--star-size-m);
+  height: var(--star-size-m);
+  margin-left: 70%;
+  margin-top: 15%;
+  animation: twinkle 1.1s infinite, fade-in 14s 1;
+  -webkit-animation: twinkle 1.1s infinite, fade-in 14s ease 1s 1;
+}
+
+.star4 {
+  width: var(--star-size-m);
+  height: var(--star-size-m);
+  margin-left: 20%;
+  margin-top: 25%;
+  animation: twinkle 0.8s infinite, fade-in 16s 1;
+  -webkit-animation: twinkle 0.8s infinite, fade-in 16s ease 1s 1;
+}
+
+.star5 {
+  width: var(--star-size-l);
+  height: var(--star-size-l);
+  margin-left: 36%;
+  margin-top: 30%;
+  animation: twinkle 1.2s infinite, fade-in 18s 1;
+  -webkit-animation: twinkle 1.2s infinite, fade-in 18s ease 0s 1;
+}
+
+.star6 {
+  width: var(--star-size-s);
+  height: var(--star-size-s);
+  margin-left: 50%;
+  margin-top: 20%;
+  animation: twinkle 0.7s infinite, fade-in 20s 1;
+  -webkit-animation: twinkle 0.7s infinite, fade-in 20s ease 0s 1;
+}
+
+.fg {
+  position: relative;
+  bottom: -455px;
+}
+
+.cabin {
+  position: absolute;
+  width: 200px;
+  height: 140px;
+  margin-left: 66%;
+  margin-top: 380px;
+  clip-path: var(--cabin-shape);
+  -webkit-clip-path: var(--cabin-shape);
+  animation: darken 14s ease-out forwards;
+}
+
+.window {
+  width: 22px;
+  height: 18px;
+  border-radius: 10%;
+  margin-top: 32%;
+  margin-left: 26%;
+  background: var(--light-yellow);
+  opacity: 0;
+  animation: var(--window-firelight);
+  -webkit-animation: var(--window-firelight);
+}
+
+.doorframe {
+  width: 30px;
+  height: 56px;
+  border-radius: 40% 40% 10% 10%;
+  margin-top: 0%;
+  margin-left: 46%;
+  background: transparent;
+  box-shadow: 2px -2px 2px 2px var(--light-yellow);
+  animation: var(--door-firelight);
+  -webkit-animation: var(--door-firelight);
+}
+
+.tree1 {
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  margin-left: 30%;
+  margin-top: 400px;
+  clip-path: var(--pine-shape);
+  -webkit-clip-path: var(--pine-shape);
+  animation: darken 14s ease-out forwards;
+}
+
+.tree2 {
+  position: absolute;
+  width: 80px;
+  height: 150px;
+  margin-left: 10%;
+  margin-top: 370px;
+  clip-path: var(--pine-shape);
+  -webkit-clip-path: var(--pine-shape);
+  animation: darken 14s ease-out forwards;
+}
+
+@keyframes sunset {
+  0% {
+    background: linear-gradient(180deg, var(--light-yellow), var(--dark-yellow), var(--white));
+  }
+  15% {
+    background: linear-gradient(var(--light-yellow), var(--dark-yellow), var(--white));
+  }
+  30% {
+    background: linear-gradient(var(--light-pink), var(--light-yellow), var(--dark-yellow));
+  }
+  50% {
+    background: linear-gradient(var(--light-blue), var(--light-pink), var(--light-yellow));
+  }
+  70% {
+    background: linear-gradient(var(--dark-purple), var(--light-blue), var(--light-pink));
+  }
+  99% {
+    background: linear-gradient(var(--dark-blue), var(--dark-purple), var(--light-blue));
+  }
+  100% {
+    background: linear-gradient(var(--black), var(--dark-blue), var(--dark-purple));
+  }
+}
+@keyframes rise {
+  0% {
+    top: 400px;
+    box-shadow: 0px 0px 0px 0px white;
+  }
+  100% {
+    box-shadow: 16px 10px 0px 0px white;
+    top: 10%;
+  }
+}
+@keyframes twinkle {
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+@keyframes fade-in {
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    background: white;
+  }
+}
+@keyframes darken {
+  0% {
+    background: gray;
+  }
+  100% {
+    background: black;
+  }
+}
+@keyframes window-flicker {
+  0% {
+    background: yellow;
+  }
+  50% {
+    background: var(--dark-yellow);
+  }
+  90% {
+    backgrond: orange;
+  }
+}
+@keyframes window-light-on {
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes door-flicker {
+  0% {
+    box-shadow: 2px -2px 2px 2px yellow;
+  }
+  50% {
+    box-shadow: 1px -1px 1px 1px var(--dark-yellow);
+  }
+  90% {
+    box-shadow: 2px -2px 2px 2px orange;
+  }
+}
+@keyframes door-light-on {
+  100% {
+    box-shadow: 2px -2px 2px 2px;
+  }
+}
+/*############### #main ###############  */
+#main {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  /* background: #f9f9f9; */
+  overflow: hidden;
+}
+
+#home .nav {
+  font-family: "ChosunSm";
+  position: relative;
+  margin: 10px;
+  z-index: 20;
+}
+
+#home .nav ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+}
+
+#home .nav ul li {
+  text-align: center;
+}
+
+#home .nav ul li a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  color: #111;
+  font-size: 27px;
+  font-weight: 500;
+  height: 100px;
+  line-height: 100px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#home .nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(134, 161, 169);
+  top: 27%;
+  left: 0;
+  pointer-events: none;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.7s ease 0s;
+  opacity: 0.3;
+}
+
+#home .nav ul li a:hover span {
+  position: relative;
+  display: inline-block;
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#home .nav ul li a:hover::before {
+  transform: scaleX(1);
+}
+
+#home .nav ul li a span::after {
+  position: absolute;
+  content: attr(data-text);
+  left: 0;
+  top: 100%;
+  transform: matrix(1, -0.7, 0, 1, 0, 40);
+}
+
+#home .nav ul li a:hover span::after {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#home .content {
+  height: 100vh;
+}
+
+#home .content .tit {
+  position: relative;
+  width: 34%;
+  height: 100vh;
+}
+
+#home .content .tit .tit_bg {
+  position: absolute;
+  left: -185px;
+  top: -234px;
+  width: 1200px;
+  height: 1200px;
+  transform: rotate(34deg);
+}
+
+#home .content .tit .tit_bg img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#home .content .tit .tit_bg img:nth-child(3) {
+  width: 133%;
+  height: 66%;
+  margin-top: 253px;
+  margin-left: -276px;
+  transform: rotate(-37deg);
+}
+
+#home .content .tit .desc {
+  font-family: "ChosunSm";
+  position: absolute;
+  left: 30%;
+  transform: translate(50%, 0);
+  top: 17%;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 70px 90px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+#home .content .tit .desc .keyword span {
+  display: inline-block;
+  font-size: 60px;
+  letter-spacing: -6px;
+}
+
+#home .content .tit .desc .keyword span:nth-child(1) {
+  animation: keyword_ani 0.5s ease infinite alternate;
+}
+
+#home .content .tit .desc .keyword span:nth-child(2) {
+  animation: keyword_ani 0.5s 0.1s ease infinite alternate;
+}
+
+#home .content .tit .desc .keyword span:nth-child(3) {
+  animation: keyword_ani 0.5s 0.2s ease infinite alternate;
+}
+
+#home .content .tit .desc .keyword span:nth-child(4) {
+  animation: keyword_ani 0.5s 0.3s ease infinite alternate;
+}
+
+#home .content .tit .desc .keyword span:nth-child(5) {
+  animation: keyword_ani 0.5s 0.4s ease infinite alternate;
+}
+
+#home .content .tit .desc .keyword span:nth-child(6) {
+  animation: keyword_ani 0.5s 0.5s ease infinite alternate;
+}
+
+#home .content .tit .desc .keyword span:nth-child(7) {
+  animation: keyword_ani 0.5s 0.6s ease infinite alternate;
+}
+
+#home .content .tit .desc h2 {
+  font-family: "ChosunSm";
+  font-size: 84px;
+  margin: 10px 0px;
+  width: 600px;
+  /* text-shadow: 0 2px 0 #fff,
+    0 2px 0 #00a6a0,
+    0 3px 0 #00a6a0,
+    0 4px 0 #00a6a0,
+    0 5px 0 #00a6a0,
+    0 6px 0 transparent,
+    0 7px 0 transparent,
+    0 8px 0 transparent,
+    0 9px 0 transparent,
+    0 10px 10px rgba(0, 0, 0, .4);
+  color:#fff;
+  -webkit-text-stroke: 2px #2C6BB2; */
+}
+
+#home .content .tit .desc h2:nth-of-type(2) {
+  display: none;
+}
+
+#home .content .tit .desc h2:nth-of-type(3) {
+  display: none;
+}
+
+#home .content .tit .desc p {
+  line-height: 1.5;
+}
+
+#home .content .tit .desc p:nth-of-type(2) {
+  display: none;
+}
+
+#home .content .tit .desc p:nth-of-type(3) {
+  display: none;
+}
+
+#home .content {
+  justify-content: flex-end;
+}
+
+#home .content .tit {
+  position: relative;
+  width: 34%;
+  height: 100vh;
+}
+
+#home .content .tit .tit_bg {
+  position: absolute;
+  left: -185px;
+  top: -234px;
+  width: 1200px;
+  height: 1200px;
+  transform: rotate(34deg);
+}
+
+#home .content .tit .tit_bg img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#home .content .tit .tit_bg img:nth-child(1) {
+  width: 130%;
+  height: 100%;
+  margin-top: 253px;
+  margin-left: -276px;
+  transform: rotate(-90deg);
+}
+
+#home .content .tit .tit_bg img:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  margin-top: 253px;
+  margin-left: -276px;
+  transform: rotate(-37deg);
+}
+
+#home .content .tit .tit_bg img:nth-child(3) {
+  width: 100%;
+  height: 100%;
+  margin-top: 253px;
+  margin-left: -276px;
+  transform: rotate(-90deg);
+}
+
+/*두번쨰*/
+#home .content .tit .tit_bg2 {
+  position: absolute;
+  left: 1505px;
+  top: -234px;
+  width: 1200px;
+  height: 1200px;
+  transform: rotate(34deg);
+}
+
+#home .content .tit .tit_bg2 img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#home .content .tit .tit_bg2 img:nth-child(1) {
+  width: 130%;
+  height: 100%;
+  margin-top: 253px;
+  margin-left: -276px;
+  transform: rotate(-90deg);
+}
+
+#home .content .tit .tit_bg2 img:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  margin-top: 253px;
+  margin-left: -276px;
+  transform: rotate(-37deg);
+}
+
+#home .content .tit .tit_bg2 img:nth-child(3) {
+  width: 100%;
+  height: 100%;
+  margin-top: 253px;
+  margin-left: -276px;
+  transform: rotate(-37deg);
+}
+
+/*############### #about ###############  */
+#about {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  font-family: "ChosunSm";
+  background-size: cover;
+}
+
+#about .about_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.whitebox {
+  position: absolute;
+  left: 228px;
+  top: 177px;
+  width: 550px;
+  height: 550px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+#about .about_content {
+  position: relative;
+  width: 1606px;
+  height: 81vh;
+  margin: auto;
+  top: 9%;
+  border: 3px solid #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about .card {
+  width: 320px;
+  height: 50%;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 20px 25px;
+  text-transform: uppercase;
+  box-shadow: 1px 0 0 0 #222, 0 1px 0 0 #222, 1px 1px 0 0 #222, 1px 0 0 0 #222 inset, 0 1px 0 0 #222 inset;
+  /*border 겹침현상 방지*/
+  /* https://kutar37.tistory.com/entry/div-%ED%85%8C%EB%91%90%EB%A6%ACborder-%EA%B2%B9%EC%B9%A8-%EC%A0%9C%EA%B1%B0collapse */
+  /* https://comizle.tistory.com/41 */
+}
+
+#about .card h2 {
+  font-family: "ChosunSm";
+  font-size: 36px;
+  padding: 16px 0px;
+  color: #000;
+}
+
+#about .card span {
+  font-size: 21px;
+}
+
+#about .card .arrow-right span {
+  font-size: 20px;
+}
+
+#about .card ul li {
+  font-size: 18px;
+  line-height: 29px;
+  list-style: disc;
+  margin-left: 20px;
+  color: #666;
+  line-height: 1.7;
+}
+
+#about .card2 ul li {
+  margin-bottom: 10px;
+}
+
+#about .card4 {
+  padding: 0;
+}
+
+#about .card4 .about_img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 1px 0px 0px 10px;
+}
+
+#about .card4 .about_img img {
+  height: 100%;
+}
+
+#about .card5 ul li:nth-child(4) {
+  text-transform: none;
+}
+
+.arrow-right {
+  transform: rotate(-90deg);
+  position: absolute;
+  bottom: 96px;
+  left: 41%;
+}
+
+.arrow-right span {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  border-bottom: 3px solid #999;
+  border-right: 3px solid rgba(153, 153, 153, 0.6);
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate-arrows 2s infinite;
+}
+
+.arrow-right span:nth-child(1) {
+  animation-delay: -0.2s;
+}
+
+.arrow-right span:nth-child(2) {
+  animation-delay: -0.4s;
+}
+
+.arrow-right span:nth-child(3) {
+  animation-delay: -0.6s;
+}
+
+/*############### #web ###############  */
+#web {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+}
+
+#web .left_nav {
+  position: relative;
+  background-color: #fff;
+  /* background-color:  #DFE3DB; */
+  border-right: 1px solid #000;
+  height: 100%;
+  width: 60px;
+  z-index: 110;
+}
+
+#web .left_nav h2 {
+  font-family: "ChosunSm";
+  writing-mode: vertical-rl;
+  position: absolute;
+  width: 147px;
+  top: 40%;
+  transform: translateY(-50%);
+  left: -100px;
+  font-size: 32px;
+  color: #222;
+}
+
+#web .p_desc {
+  width: 1700px;
+  height: 100%;
+  background: url(../images/b.png) no-repeat -40px center;
+  background-size: cover;
+}
+
+#web .p_desc h2 {
+  position: absolute;
+  font-family: "ChosunSm";
+  left: 60px;
+  bottom: 0;
+  padding: 18px 16px 18px 18px;
+  text-transform: uppercase;
+  font-size: 180px;
+  color: #353232;
+}
+
+#web .p_desc .hand {
+  width: 30%;
+  height: 50%;
+  position: absolute;
+  right: 8%;
+  top: 4%;
+}
+
+#web .panerl {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 1920px;
+  left: 88%;
+  top: 0;
+  font-family: "ChosunSm";
+}
+
+#web .panerl h3 {
+  font-family: "ChosunSm";
+}
+
+#web .panerl p {
+  line-height: 1.3;
+}
+
+#web .panerl .panerl_1,
+#web .panerl .panerl_2,
+#web .panerl .panerl_3 {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  height: 100%;
+  background: #F4F4F4;
+  box-sizing: border-box;
+}
+
+#web .panerl .panerl_1 {
+  left: 60px;
+  width: 450%;
+  display: flex;
+}
+
+#web .panerl .panerl_2 {
+  left: 60px;
+  width: 530%;
+  display: flex;
+}
+
+#web .panerl .panerl_3 {
+  left: 172px;
+  width: 280%;
+  display: flex;
+}
+
+.p_tit {
+  position: relative;
+  writing-mode: vertical-rl;
+  padding: 33px 10px;
+  font-size: 20px;
+  height: 100%;
+  background: #fff;
+  z-index: 10;
+  color: #111;
+  font-weight: 500;
+  border-left: 1px solid #000;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.p_tit:hover {
+  background: #cbd4d9;
+}
+
+.p_tit span {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  left: -5px;
+}
+
+.p_name {
+  padding-top: 22px;
+}
+
+/* btn common */
+.btn {
+  position: relative;
+  left: 100px;
+  top: 10px;
+  margin-top: 50px;
+}
+
+.btn ul li {
+  margin-right: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn ul li a {
+  display: block;
+  padding: 10px 0px;
+  font-size: 28px;
+  text-align: center;
+  width: 220px;
+  font-weight: 500;
+  letter-spacing: -2.5px;
+  box-shadow: inset 0 0 0 4px #cbd4d9;
+  color: #555;
+  transition: color 0.25s 0.08;
+  position: relative;
+}
+
+.btn ul li a::before,
+.btn ul li a::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.btn ul li a::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.btn ul li a::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.btn ul li a:hover {
+  color: #333;
+}
+
+.btn ul li a:hover::before,
+.btn ul li a:hover::after {
+  border-color: #666;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.btn ul li a:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.btn ul li a:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+/*#####----- panerl_1 -----######  */
+/* ---------- covernat ---------- */
+.web_fo {
+  width: 200%;
+  height: 100%;
+  padding: 50px 0px 54px 54px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.covernat .c_logo {
+  width: 500px;
+  padding: 40px;
+}
+
+.mockup {
+  width: 750px;
+  display: flex;
+}
+
+.info {
+  font-size: 20px;
+  line-height: 40px;
+  width: 1000px;
+}
+
+.w_desc {
+  display: flex;
+  align-items: center;
+}
+
+.covernat .btn ul {
+  display: flex;
+}
+
+.covernat .btn ul li {
+  margin-right: 24px;
+}
+
+/* ---------- web작업 ---------- */
+/* ---------- bugyeonbox ---------- */
+.bugyeonbox {
+  display: flex;
+  margin-left: 400px;
+}
+
+.bugyeonbox .slide_wrap {
+  position: relative;
+}
+
+.bugyeonbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.bugyeonbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/부경대.jpeg) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.bugyeonbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.bugyeonbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: -58px;
+  bottom: 98px;
+}
+
+.bugyeonbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/부경대-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.bugyeonbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: -29px;
+  bottom: 221px;
+}
+
+.bugyeonbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/부경대-mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.bugyeonbox .bugyeon_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.bugyeonbox .bugyeon_desc .bugyeon_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.bugyeonbox .bugyeon_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.bugyeonbox .bugyeon_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.bugyeonbox .bugyeon_desc .bugyeon_logo img {
+  height: 100%;
+}
+
+/* ---------- sangsangbox ---------- */
+.sangsangbox {
+  display: flex;
+  margin-left: 800px;
+}
+
+.sangsangbox .slide_wrap {
+  position: relative;
+}
+
+.sangsangbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.sangsangbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/상상짬뽕.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.sangsangbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.sangsangbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: -18px;
+  bottom: 98px;
+}
+
+.sangsangbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/상상짬뽕-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.sangsangbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: -19px;
+  bottom: 221px;
+}
+
+.sangsangbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/상상짬뽕mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.sangsangbox .sangsang_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.sangsangbox .sangsang_desc .sangsang_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.sangsangbox .sangsang_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.sangsangbox .sangsang_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.sangsangbox .sangsang_desc .sangsang_logo img {
+  height: 100%;
+}
+
+/*lhbox*/
+.lhbox {
+  display: flex;
+  margin-left: 800px;
+}
+
+.lhbox .slide_wrap {
+  position: relative;
+}
+
+.lhbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.lhbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/LH건설.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.lhbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.lhbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 50px;
+  bottom: 98px;
+}
+
+.lhbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/lh-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.lhbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: -1px;
+  bottom: 221px;
+}
+
+.lhbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/LH-MO.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.lhbox .lh_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.lhbox .lh_desc .lh_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.lhbox .lh_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.lhbox .lh_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.lhbox .lh_desc .lh_logo img {
+  height: 100%;
+}
+
+/*#####----- panerl_2 -----######  */
+.panerl_2 {
+  display: flex;
+  width: 1920px;
+}
+
+.panerl_2 .web_fo2 {
+  width: 200%;
+  height: 100%;
+  padding: 50px 0px 54px 54px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+/* ---------- panstarbox ---------- */
+.panstarbox {
+  display: flex;
+  margin-left: 400px;
+}
+
+.panstarbox .slide_wrap {
+  position: relative;
+}
+
+.panstarbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.panstarbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/팬스타.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.panstarbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.panstarbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 58px;
+  bottom: 98px;
+}
+
+.panstarbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/팬스타-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.panstarbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: 10px;
+  bottom: 221px;
+}
+
+.panstarbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/펜스타-mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.panstarbox .panstar_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.panstarbox .panstar_desc .panstar_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.panstarbox .panstar_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.panstarbox .panstar_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.panstarbox .panstar_desc .panstar_logo img {
+  height: 100%;
+}
+
+/* ---------- spacebox ---------- */
+.spacebox {
+  display: flex;
+  margin-left: 800px;
+}
+
+.spacegbox .slide_wrap {
+  position: relative;
+}
+
+.spacebox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.spacebox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/우주의조약돌.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.spacebox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.spacebox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 2550px;
+  bottom: 98px;
+}
+
+.spacebox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/우주의조약돌-태블렛.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.spacebox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  left: 3100px;
+  bottom: 290px;
+}
+
+.spacebox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/우주의\ 조약돌-mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.spacebox .space_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.spacebox .space_desc .space_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.spacebox .space_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.spacebox .space_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.spacebox .space_desc .space_logo img {
+  height: 100%;
+}
+
+/*유니세프시작*/
+.unicefbox {
+  display: flex;
+  margin-left: 800px;
+}
+
+.unicefbox .slide_wrap {
+  position: relative;
+}
+
+.unicefbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.unicefbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/유니세프.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.unicefbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.unicefbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 50px;
+  bottom: 98px;
+}
+
+.unicefbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/유니세프-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.unicefbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: -1px;
+  bottom: 221px;
+}
+
+.unicefbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/유니세프-mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.unicefbox .unicef_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.unicefbox .unicef_desc .unicef_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.unicefbox .unicef_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.unicefbox .unicef_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.unicefbox .unicef_desc .unicef_logo img {
+  height: 100%;
+}
+
+/*아웃백박스*/
+.outbackbox {
+  display: flex;
+  margin-left: 800px;
+}
+
+.outbackbox .slide_wrap {
+  position: relative;
+}
+
+.outbackbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.outbackbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/아웃백.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.outbackbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.outbackbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 50px;
+  bottom: 98px;
+}
+
+.outbackbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/아웃백-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.outbackbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: -1px;
+  bottom: 221px;
+}
+
+.outbackbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/아웃백-mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.outbackbox .outback_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.outbackbox .outback_desc .outback_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.outbackbox .outback_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.outbackbox .outback_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.outbackfbox .outback_desc .outback_logo img {
+  height: 100%;
+}
+
+/*깔끄미시작*/
+.cleanbox {
+  display: flex;
+  margin-left: 800px;
+}
+
+.cleanbox .slide_wrap {
+  position: relative;
+}
+
+.cleanbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.cleanbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/깔끄미청소.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.cleanbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.cleanbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 50px;
+  bottom: 98px;
+}
+
+.cleanbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/깔끄미청소-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.cleanbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: -1px;
+  bottom: 221px;
+}
+
+.cleanbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/깔끄미청소-mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.cleanbox .clean_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.cleanbox .clean_desc .clean_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.cleanfbox .clean_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.cleanbox .clean_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.cleanbox .clean_desc .clean_logo img {
+  height: 100%;
+}
+
+/* ---------- mac ---------- */
+.panerl_3 .web_fo3 {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.panerl_3 .web_fo3 h2 {
+  position: absolute;
+  left: 28%;
+  top: 10%;
+  font-size: 50px;
+}
+
+.panerl_3 .guid {
+  position: absolute;
+  font-size: 20px;
+  top: 850px;
+  left: 110px;
+  font-family: "ChosunSm";
+  animation: keyword_ani 0.5s 0.2s ease infinite alternate;
+}
+
+.panerl_3 .swiper {
+  width: 100%;
+  position: absolute;
+  left: -165px;
+  top: 221px;
+}
+
+.panerl_3 .swiper-slide {
+  width: 500px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.panerl_3 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.panerl_3 .swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 91px;
+  left: -159px;
+}
+
+.panerl_3 .swiper-pagination-bullet-active {
+  border-radius: 5px;
+  background: #517180;
+  border: 1px solid transparent;
+}
+
+.panerl_3 .stit_wrap {
+  color: #111;
+  position: relative;
+  display: inline-block;
+  left: 29%;
+  top: 12%;
+}
+
+.panerl_3 .s_tit {
+  font-size: 50px;
+  font-weight: 600;
+  font-family: "ChosunSm";
+  color: #333333;
+  text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.panerl_3 .mark {
+  border-bottom: 4px solid #fff;
+  font-size: 24px;
+  width: 93px;
+  position: absolute;
+  top: -41px;
+  left: 0px;
+  transform: translate3d(0, 0, 0);
+  animation: mark-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl_3 .c,
+.panerl_3 .r,
+.panerl_3 .o,
+.panerl_3 .l1,
+.panerl_3 .l2 {
+  will-change: margin-left, margin-right;
+}
+
+.panerl_3 .c {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  animation: r-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl_3 .r {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  animation: e1-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl_3 .o {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  animation: s1-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl_3 .l1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  animation: l1-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl_3 .l2 {
+  margin-left: 2rem;
+  margin-right: 3rem;
+  animation: l2-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl .stit_wrap {
+  color: #111;
+  position: relative;
+  display: inline-block;
+  left: 1%;
+  top: 12%;
+}
+
+.panerl .s_tit {
+  font-size: 65px;
+  font-weight: 600;
+  font-family: "ChosunSm";
+  color: #333333;
+  text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.panerl .mark {
+  border-bottom: 4px solid #fff;
+  font-size: 24px;
+  width: 93px;
+  position: absolute;
+  top: -41px;
+  left: 0px;
+  transform: translate3d(0, 0, 0);
+  animation: mark-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl .c,
+.panerl .r,
+.panerl .o,
+.panerl .l1,
+.panerl .l2 {
+  will-change: margin-left, margin-right;
+}
+
+.panerl .c {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  animation: r-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl .r {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  animation: e1-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl .o {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  animation: s1-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl .l1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  animation: l1-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.panerl .l2 {
+  margin-left: 2rem;
+  margin-right: 3rem;
+  animation: r-anim 10s infinite cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/*############### #contact ###############  */
+#contact {
+  position: fixed;
+  font-family: "ChosunSm";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(../images/water-bg.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 100;
+  overflow: hidden;
+}
+
+#contact .con_bg {
+  position: absolute;
+  left: 162px;
+  top: -131px;
+  width: 30%;
+  height: 171%;
+  background: url(../images/green_spalsh.png) no-repeat center;
+  transform: rotate(-45deg);
+}
+
+#scene {
+  width: 620px;
+  height: 700px;
+  left: 100px;
+  top: 100px;
+}
+
+#contact #scene .c_bg {
+  margin-top: 45px;
+  width: 80%;
+  margin-left: 63px;
+}
+
+#contact #scene .c_me {
+  width: 76%;
+  height: 85%;
+  border-radius: 50% 50% 0% 0%/38% 38% 0% 0%;
+  overflow: hidden;
+  margin-top: -31px;
+}
+
+#contact #scene .c_me img {
+  height: 100%;
+}
+
+#contact .tri {
+  position: absolute;
+  left: 112px;
+  top: 31px;
+  width: 584px;
+  height: 445px;
+}
+
+#contact .c_tri1 {
+  position: absolute;
+  top: 102px;
+  left: 0;
+  width: 20px;
+  transform: rotate(73deg);
+  animation: rotate_image 6s linear infinite alternate;
+  transform-origin: 50% 50%;
+}
+
+#contact .c_tri2 {
+  position: absolute;
+  top: 156px;
+  left: 0;
+  width: 89px;
+  transform: rotate(115deg);
+  animation: rotate_image 4s linear infinite alternate;
+  transform-origin: 50% 50%;
+}
+
+#contact .c_tri3 {
+  position: absolute;
+  right: -9px;
+  bottom: -337px;
+  transform: rotate(-31deg);
+  width: 140px;
+  animation: rotate_image 6s linear infinite alternate;
+  transform-origin: 50% 50%;
+}
+
+#contact .contact_box {
+  position: absolute;
+  right: 10%;
+  top: 18%;
+}
+
+#contact .contact_box > h2 {
+  font-family: "ChosunSm";
+  position: absolute;
+  left: -32px;
+  top: -67px;
+  z-index: 10;
+  font-size: 120px;
+  text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+#contact .contact_box .c_box {
+  width: 1000px;
+  height: 630px;
+  background: #fff;
+  border-radius: 10%;
+  filter: drop-shadow(12px 3px 13px #000);
+  display: flex;
+  background: url(../images/background-3138516_1280.jpg) no-repeat center;
+  background-size: cover;
+}
+
+#contact .contact_box .c_box .con_left {
+  margin: 70px 40px;
+  width: 50%;
+  border-radius: 5%;
+  padding: 38px 20px;
+  box-sizing: border-box;
+}
+
+#contact .contact_box .c_box .con_left .hover {
+  position: static;
+  font-size: 45px;
+  letter-spacing: 10px;
+}
+
+#contact .contact_box .c_box .ssmbs {
+  white-space: nowrap;
+  font-size: 17px;
+  overflow: hidden;
+  width: 73%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+#contact .contact_box .c_box .ssmbs span {
+  display: inline-block;
+  animation: marquee 5.5s infinite linear;
+}
+
+#contact .contact_box .c_box span::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: attr(data-label);
+  /* data-label의 속성값을 가져와라 */
+  transform: translateX(110%);
+}
+
+#contact .contact_box .c_box .con_left p {
+  margin-top: 8px;
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+#contact .contact_box .c_box .con_left .thanks {
+  width: 91px;
+  position: absolute;
+  right: 48%;
+  top: 64%;
+}
+
+#contact .contact_box .c_box .con_right {
+  position: relative;
+  margin-top: 70px;
+  width: 335px;
+}
+
+#contact .contact_box .c_box .con_right .qr {
+  width: 250px;
+  margin: 20px auto;
+}
+
+#contact .contact_box .c_box .con_right .address {
+  width: 829px;
+  height: 242px;
+  position: absolute;
+  left: -398px;
+  bottom: -120px;
+  z-index: -1;
+  border-radius: 0 0 0 57px;
+}
+
+#contact .contact_box .c_box .con_right .address ul {
+  width: 391px;
+  position: absolute;
+  right: 0px;
+  top: 21px;
+  margin: 0px 8px;
+  padding: 0 15px;
+}
+
+#contact .contact_box .c_box .con_right .address ul li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#contact .contact_box .c_box .con_right .address ul li i {
+  padding-right: 10px;
+}
+
+#contact .to_top {
+  position: absolute;
+  left: 38px;
+  bottom: 51px;
+  animation: scale 2.5s linear infinite;
+}
+
+#contact .to_top a:hover {
+  background: #221f1f;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+#contact .to_top a {
+  font-size: 20px;
+  background: #fff;
+  border: 1px solid #353E29;
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}/*# sourceMappingURL=style.css.map */
