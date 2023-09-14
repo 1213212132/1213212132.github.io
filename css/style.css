@@ -846,7 +846,7 @@ body {
 
 #web .panerl .panerl_2 {
   left: 60px;
-  width: 400%;
+  width: 420%;
   display: flex;
 }
 
@@ -889,7 +889,7 @@ body {
 /* btn common */
 .btn {
   position: relative;
-  left: 60px;
+  left: 0px;
   top: 10px;
   margin-top: 50px;
 }
@@ -1053,7 +1053,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  right: -29px;
+  right: 9px;
   bottom: 200px;
 }
 
@@ -1109,7 +1109,7 @@ body {
 /* ---------- sangsangbox ---------- */
 .sangsangbox {
   display: flex;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
 .sangsangbox .slide_wrap {
@@ -1161,7 +1161,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  right: -19px;
+  right: 9px;
   bottom: 200px;
 }
 
@@ -1217,7 +1217,7 @@ body {
 /*lhbox*/
 .lhbox {
   display: flex;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
 .lhbox .slide_wrap {
@@ -1269,7 +1269,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  right: -1px;
+  right: 9px;
   bottom: 200px;
 }
 
@@ -1319,6 +1319,114 @@ body {
 }
 
 .lhbox .lh_desc .lh_logo img {
+  height: 100%;
+}
+
+/*아웃백박스*/
+.outbackbox {
+  display: flex;
+  margin-left: 600px;
+}
+
+.outbackbox .slide_wrap {
+  position: relative;
+}
+
+.outbackbox .slide_wrap .monitor {
+  width: 800px;
+  height: 700px;
+}
+
+.outbackbox .slide_wrap .monitor_box {
+  position: absolute;
+  top: 17px;
+  left: 21px;
+  background: url(../images/아웃백.png) no-repeat;
+  width: 753px;
+  height: 372px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.outbackbox .slide_wrap .bottom_box:hover {
+  background-position: bottom;
+}
+
+.outbackbox .slide_wrap .tablet {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 110px;
+  bottom: 98px;
+}
+
+.outbackbox .slide_wrap .tablet_box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url(../images/아웃백-태블릿.png) no-repeat;
+  width: 270px;
+  height: 370px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.outbackbox .slide_wrap .mobile {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  right: 59px;
+  bottom: 200px;
+}
+
+.outbackbox .slide_wrap .mobile_box {
+  position: absolute;
+  top: 64px;
+  left: 27px;
+  background: url(../images/아웃백-mo.png) no-repeat;
+  width: 147px;
+  height: 274px;
+  background-size: cover;
+  transition: 3s;
+  background-position: top;
+}
+
+.outbackbox .outback_desc {
+  margin-left: 100px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.outbackbox .outback_desc .outback_logo h3 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 50px;
+}
+
+.outbackbox .outback_info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  line-height: 10px;
+  font-size: 18px;
+}
+
+.outbackbox .outback_info p {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 300;
+}
+
+.outbackfbox .outback_desc .outback_logo img {
   height: 100%;
 }
 
@@ -1391,7 +1499,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  right: 10px;
+  right: 65px;
   bottom: 200px;
 }
 
@@ -1447,7 +1555,7 @@ body {
 /* ---------- spacebox ---------- */
 .spacebox {
   display: flex;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
 .spacegbox .slide_wrap {
@@ -1479,7 +1587,7 @@ body {
   position: absolute;
   width: 300px;
   height: 500px;
-  left: 1950px;
+  left: 2180px;
   bottom: 98px;
 }
 
@@ -1499,7 +1607,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  left: 2490px;
+  left: 2630px;
   bottom: 260px;
 }
 
@@ -1555,7 +1663,7 @@ body {
 /*유니세프시작*/
 .unicefbox {
   display: flex;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
 .unicefbox .slide_wrap {
@@ -1607,7 +1715,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  right: -60px;
+  right: -30px;
   bottom: 200px;
 }
 
@@ -1660,118 +1768,10 @@ body {
   height: 100%;
 }
 
-/*아웃백박스*/
-.outbackbox {
-  display: flex;
-  margin-left: 400px;
-}
-
-.outbackbox .slide_wrap {
-  position: relative;
-}
-
-.outbackbox .slide_wrap .monitor {
-  width: 800px;
-  height: 700px;
-}
-
-.outbackbox .slide_wrap .monitor_box {
-  position: absolute;
-  top: 17px;
-  left: 21px;
-  background: url(../images/아웃백.png) no-repeat;
-  width: 753px;
-  height: 372px;
-  background-size: cover;
-  transition: 3s;
-  background-position: top;
-}
-
-.outbackbox .slide_wrap .bottom_box:hover {
-  background-position: bottom;
-}
-
-.outbackbox .slide_wrap .tablet {
-  position: absolute;
-  width: 300px;
-  height: 500px;
-  left: 50px;
-  bottom: 98px;
-}
-
-.outbackbox .slide_wrap .tablet_box {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: url(../images/아웃백-태블릿.png) no-repeat;
-  width: 270px;
-  height: 370px;
-  background-size: cover;
-  transition: 3s;
-  background-position: top;
-}
-
-.outbackbox .slide_wrap .mobile {
-  position: absolute;
-  width: 200px;
-  height: 300px;
-  right: 20px;
-  bottom: 200px;
-}
-
-.outbackbox .slide_wrap .mobile_box {
-  position: absolute;
-  top: 64px;
-  left: 27px;
-  background: url(../images/아웃백-mo.png) no-repeat;
-  width: 147px;
-  height: 274px;
-  background-size: cover;
-  transition: 3s;
-  background-position: top;
-}
-
-.outbackbox .outback_desc {
-  margin-left: 100px;
-  margin-top: 50px;
-  font-size: 20px;
-}
-
-.outbackbox .outback_desc .outback_logo h3 {
-  font-size: 40px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #333;
-  line-height: 50px;
-}
-
-.outbackbox .outback_info span {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #333;
-  padding-bottom: 10px;
-  line-height: 10px;
-  font-size: 18px;
-}
-
-.outbackbox .outback_info p {
-  font-size: 16px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  color: #666;
-  font-weight: 300;
-}
-
-.outbackfbox .outback_desc .outback_logo img {
-  height: 100%;
-}
-
 /*깔끄미시작*/
 .cleanbox {
   display: flex;
-  margin-left: 400px;
+  margin-left: 600px;
 }
 
 .cleanbox .slide_wrap {
@@ -1823,7 +1823,7 @@ body {
   position: absolute;
   width: 200px;
   height: 300px;
-  right: -1px;
+  right: 55px;
   bottom: 221px;
 }
 
